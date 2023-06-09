@@ -57,7 +57,7 @@
                         android:layout_height="wrap_content"
                         android:ems="10"
                         android:inputType="textUri"
-                        android:hint="Enter BASE URL"
+                        android:hint="Enter  URL"
                         android:textColorHint="@color/light_black"
                         android:textSize="25dp"
                         android:layout_gravity="center"
@@ -108,16 +108,8 @@
                 android:textSize="20dp"
                 android:textColor="@color/light_black"
                 android:layout_gravity="center"
-                android:padding="12dp"/>
-            <TextView
-                android:id="@+id/footer_msg_2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/footer_2"
-                android:textSize="20dp"
-                android:textColor="@color/light_black"
-                android:layout_gravity="center"
-                android:padding="12dp"/>
+                android:padding="22dp"/>
+
         </LinearLayout>
     </ScrollView>
 
