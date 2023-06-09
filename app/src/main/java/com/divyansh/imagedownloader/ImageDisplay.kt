@@ -19,7 +19,6 @@ class ImageDisplay : AppCompatActivity() {
         setContentView(binding.root)
 
         val recyclerView = binding.recycler
-
         var layoutManager = GridLayoutManager(applicationContext , 2 , LinearLayoutManager.VERTICAL , false)
         recyclerView.layoutManager = layoutManager
 
@@ -27,13 +26,16 @@ class ImageDisplay : AppCompatActivity() {
         var res = intent.getStringArrayListExtra("dimage")
 
 
-        for (i in res !!){
-            data_list.add(i)
+        if (res != null) {
+            for (i in res){
+                if(i!=null)
+                    data_list.add(i)
+            }
         }
-        Log.d("dps" , data_list.toString())
         var adapter = AdapterClass(data_list , this )
         recyclerView.adapter = adapter
         adapter.notifyDataSetChanged()
 
     }
+
 }

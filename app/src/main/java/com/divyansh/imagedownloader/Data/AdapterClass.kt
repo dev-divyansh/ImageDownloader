@@ -1,6 +1,7 @@
 package com.divyansh.imagedownloader.Data
 
 import android.content.Context
+import android.content.Intent
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -8,9 +9,11 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide
 import com.divyansh.imagedownloader.Data.AdapterClass.viewHolder
+import com.divyansh.imagedownloader.FullDisplay
+import com.divyansh.imagedownloader.ImageDisplay
 import com.divyansh.imagedownloader.R
+import com.divyansh.imagedownloader.downloader
 import com.squareup.picasso.MemoryPolicy
 import com.squareup.picasso.NetworkPolicy
 import com.squareup.picasso.Picasso
@@ -37,8 +40,14 @@ class AdapterClass internal constructor(arrayList: ArrayList<String>, context: C
             .load(uri)
             .memoryPolicy(MemoryPolicy.NO_CACHE)
             .networkPolicy(NetworkPolicy.NO_CACHE)
-            .centerCrop()
             .into(holder.Imageview)
+
+        holder.Imageview.setOnClickListener{
+            val intent = Intent(context , FullDisplay::class.java)
+            intent.putExtra("image_uri" , uri)
+
+            context.startActivity(intent)
+        }
     }
 
     override fun getItemCount(): Int {

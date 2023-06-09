@@ -57,6 +57,7 @@ class Imagedownloader : AppCompatActivity() {
         var pyObject : PyObject = py.getModule("scraper")
 
         binding.button.setOnClickListener {
+
             if (is_empty(binding.url.text.toString()) == true){
                 Toast.makeText(this , "Base  url is required" , Toast.LENGTH_LONG).show()
                 return@setOnClickListener
@@ -67,12 +68,24 @@ class Imagedownloader : AppCompatActivity() {
 
 
              if (permission_granted){
-                    var res = pyObject.callAttr("main" , URL ).asList().toTypedArray()
+                 binding.button.isClickable = false
                  var newRes  = ArrayList<String>()
+                 try {
+                     var res = pyObject.callAttr("main" , URL ).asList().toTypedArray()
 
-                 for (i in res){
-                     newRes.add(i.toString())
+
+                     for (i in res){
+                         if(i != null) {
+                             newRes.add(i.toString())
+                         }
+                     }
                  }
+                 catch (e : Exception){
+                     Toast.makeText(applicationContext , "Something went wrong" , Toast.LENGTH_LONG).show()
+                     binding.button.isClickable = true
+                     return@launch
+                 }
+
                  downloadImages(newRes , this@Imagedownloader)
                 }
                 else{
@@ -87,6 +100,7 @@ class Imagedownloader : AppCompatActivity() {
     }
 
     private fun downloadImages(res: ArrayList<String> , context : Context) {
+
         //  code for downloading  the images
         binding.url.isEnabled = false
         binding.button.visibility = View.GONE
@@ -94,7 +108,7 @@ class Imagedownloader : AppCompatActivity() {
 
 
         CoroutineScope(Dispatchers.Main).launch {
-            delay(10000)
+            delay(7000)
             var intent = Intent( context, ImageDisplay::class.java)
 
             intent.putExtra("dimage" , res)
