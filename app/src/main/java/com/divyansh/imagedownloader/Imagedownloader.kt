@@ -2,8 +2,12 @@ package com.divyansh.imagedownloader
 
 import android.content.Context
 import android.content.Intent
+import android.content.pm.Capability
 import android.content.pm.PackageManager
+import android.net.ConnectivityManager
+import android.net.NetworkCapabilities
 import android.net.Uri
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -50,6 +54,7 @@ class Imagedownloader : AppCompatActivity() {
 
         binding = ImageLoaderBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
 
         binding.footerMsg1.setOnClickListener {
             val intent = Intent(Intent.ACTION_VIEW , Uri.parse("https://github.com/dev-divyansh/ImageDownloader"))
