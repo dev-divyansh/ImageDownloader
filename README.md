@@ -1,4 +1,7 @@
 # ImageDownloader
+![poster](https://github.com/dev-divyansh/ImageDownloader/blob/08b262615392d139d1e966b7c5488de9fd0ff930/poster.png)
+<br/>
+<br/>
 This is an Android App that allows the user to enter the url of the website and the App would list all the images from the website.
 ImageDownloader - Fast & Easy Image Downloader
 
@@ -27,6 +30,14 @@ Download ImageDownloader now and unlock the power of hassle-free image downloadi
 
 | <img src="https://github.com/dev-divyansh/ImageDownloader/blob/master/g.jpg"  width="170" height="300" > |
 <img src="https://github.com/dev-divyansh/ImageDownloader/blob/60cf2353265c647ce4bfb2971b8a7a9dcfe0db50/sd.jpg" width="170" height="300"> |<img src="https://github.com/dev-divyansh/ImageDownloader/blob/master/img2.jpg" width="170" height="300"> |<img src="https://github.com/dev-divyansh/ImageDownloader/blob/master/img3.jpg" width="170" height="300"> |
+
+<br/>
+<br/>
+<br/>
+
+## Available on Google PlayStore [INSTALL](https://play.google.com/store/apps/details?id=com.divyansh.imagedownloader)
+
+<img src="https://github.com/dev-divyansh/ImageDownloader/blob/08b262615392d139d1e966b7c5488de9fd0ff930/playstore.png"  width="270" height="500" >
 
 ## Issues
 if you encountered any issue or bug ; feel free to open a genuine issue by clicking [HERE](https://github.com/dev-divyansh/ImageDownloader/issues)
